@@ -10,7 +10,8 @@ class HeadlinesCategoryTab extends StatefulWidget {
   _HeadlinesCategoryTabState createState() => _HeadlinesCategoryTabState();
 }
 
-class _HeadlinesCategoryTabState extends State<HeadlinesCategoryTab> {
+class _HeadlinesCategoryTabState extends State<HeadlinesCategoryTab>
+    with AutomaticKeepAliveClientMixin{
   HeadlinesCategoryBloc _bloc = new HeadlinesCategoryBloc();
   String _selectedCategory = "business";
 
@@ -99,4 +100,7 @@ class _HeadlinesCategoryTabState extends State<HeadlinesCategoryTab> {
       ),
     );
   }
+
+  @override
+  bool get wantKeepAlive => true;
 }
