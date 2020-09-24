@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:news_app_flutter/src/pages/headlines_category/headlines_category_view.dart';
 import 'package:news_app_flutter/src/pages/tab1_page.dart';
 import 'package:news_app_flutter/src/pages/tab2_page.dart';
 import 'package:provider/provider.dart';
+
+import 'headlines/headlines_view.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -42,8 +45,10 @@ class _Pages extends StatelessWidget {
       controller: navigationModel.pageController,
       physics: NeverScrollableScrollPhysics(),
       children: <Widget>[
-        Tab1Page(),
-        Tab2Page(),
+        //Tab1Page(),
+        HeadlinesTab(),
+        HeadlinesCategoryTab(),
+        //Tab2Page(),
       ],
     );
   }

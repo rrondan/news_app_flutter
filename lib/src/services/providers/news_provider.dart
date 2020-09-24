@@ -13,4 +13,10 @@ class NewsProvider {
     return newsResponse.articles;
   }
 
+  Future<List<Article>> getArticlesByCategory( String category) async{
+    final url = "$_URL_NEWS/top-headlines?country=co&apiKey=$_API_KEY&category=$category";
+    final resp = await http.get(url);
+    NewsResponse newsResponse = newsResponseFromJson( resp.body );
+    return newsResponse.articles;
+  }
 }
